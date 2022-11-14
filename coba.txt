@@ -1,0 +1,14 @@
+multimedia:
+broadcast
+animasi
+desain grafis
+
+rekayasa Perangkat Lunak:
+Web Developer
+web designer
+mobile developer
+bkp:
+perencannan pengelolaan estimasi biaya
+pelaksanaan dan  pengawasan
+tb:
+pestri  bakery dan cook

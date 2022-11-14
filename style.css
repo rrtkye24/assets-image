@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: rgb(98, 219, 250);
+  font-family: Arial, helvetica, sans-serif;
+  font-size: 18px;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
+}
+.container .box {
+  width: 300px;
+  height: 400px;
+  line-height: ;
+  color: white;
+  display: flex;
+  border-radius: 8px;
+  /* //untuk box */
+  margin: 50px;
+  transition: all 0.5s;
+}
+.box {
+  background-image: url(jeruk.png);
+  width: 300px;
+  height: 400px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+}
+.box h1 {
+  font-size: 20px;
+}
+.box p {
+  font-size: 17px;
+}
+.box .btn {
+  outline: none;
+  border: none;
+  padding: 5px 10px;
+  background: transparent;
+  cursor: pointer;
+  color: white;
+  margin: 20px 0 30px 0;
+  border: 1px solid white;
+  transition: all 0.5s;
+}
+.box .btn:hover {
+  padding: 5px 20px;
+}
+.text {
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+  border-radius: 8px;
+  transition: all 0.5s;
+}
+.text:hover {
+  opacity: 1;
+}
+.box:hover {
+  transform: translateY(20px);
+}
+.two {
+  background-image: url(rrt.png);
+}
+.three {
+  background-image: url(wave.png);
+}

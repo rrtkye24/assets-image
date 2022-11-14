@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neon Card</title>
+    <style>
+      body {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        margin: 0;
+        padding: 0;
+        background: rgb(49, 48, 48);
+        min-height: 90vh;
+      }
+      .main {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        position: relative;
+        height: 400px;
+        width: 300px;
+        border-radius: 25px;
+        background: linear-gradient(120deg, rgb(12, 131, 241), rgb(247, 6, 206));
+      }
+      /* .main::before {
+        content: "";
+        position: absolute;
+        background: white;
+        top: -3px;
+        left: -3px;
+        right: -3px;
+        bottom: -3px;
+        z-index: -1;
+        border-radius: 25px;
+      } */
+      .main::after {
+        content: "";
+        position: absolute;
+        background: white;
+        top: -3px;
+        left: -3px;
+        right: -3px;
+        bottom: -3px;
+        z-index: -2;
+        border-radius: 25px;
+        filter: blur(20px);
+      }
+      .data {
+        align-items: center;
+        color: white;
+        z-index: 0;
+        transition: all 0.5s;
+      }
+      .main::after,
+      .main::before {
+        background: linear-gradient(120deg, rgb(12, 131, 241), rgb(247, 6, 206));
+      }
+      .main:hover {
+        background-color: #fff;
+        background: linear-gradient(120deg, rgb(46, 46, 46), rgb(71, 71, 71));
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="data">
+        <h1>AMP</h1>
+        <p>Lorem ipsum dolor sit amet consectetur fdgfdghgfsdg</p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to do list</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Architects Daughter', cursive;
+        }
+        body{
+           
+            color:rgba(247, 16, 85, 0.787);
+            min-height:100vh;
+        }
+        header {
+            font-size: 1.5rem;
+           
+        }
+        header,form{
+            
+            min-height:20vh;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .fullscreen-bg {
+    
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -100;
+}
+ 
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+ 
+@media (min-aspect-ratio: 16/9) {
+    .bg-video {
+        height: 300%;
+        top: -100%;
+    }
+}
+ 
+@media (max-aspect-ratio: 16/9) {
+    .bg-video {
+        width: 300%;
+        left: -100%;
+    }
+}
+ 
+@media (max-width: 767px) {
+    .fullscreen-bg {
+        background: url('poster.jpg') center center / cover no-repeat;
+    }
+ 
+    .bg-video {
+        display: none;
+    }
+}
+        form input, form button{
+            width: 4 rem;
+            height: 2.5rem;
+            padding:0.5 rem;
+            font-size: 2rem;
+            border:none;
+            background: rgba(230, 85, 85, 0.945);
+
+        }
+        form button{
+            color:#d88771;
+            background: rgb(87, 21, 21);
+            cursor:pointer;
+            transition: all 0.3s ease;
+        }
+        form button:hover{
+            background:#d88771;
+            color:white;
+
+        }
+    </style>
+    <script>
+
+    </script>
+</head>
+<body>
+    <header>
+        <h1>My Daily To Do List</h1>
+    </header>
+    <div class="fullscreen-bg">
+        <video loop muted autoplay poster="poster.jpg" class="fullscreen-bg__video">
+            <source src="video.mp4" type="video/mp4">
+        </video>
+    </div>
+    <form action="">
+        <input type="text" class="todo-input">
+        <button class="todo-button"type="submit"><i class="fas fa-plus-square"></i></button>
+    </form>
+    <div class="todo-container">
+        <ul class="todo-list">
+        </ul>
+    </div>
+</body>
+</html>

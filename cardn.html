@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+      body {
+        background: rgb(77, 3, 3);
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color: #000;
+        margin: 0;
+        padding: 0;
+      }
+      .swiper-container {
+        width: 100%;
+        padding-top: 50px;
+        padding-bottom: 50px;
+      }
+      .swiper-slide {
+        background-position: left;
+        background-size: 50px 50px;
+        width: 350px;
+        height: 350px;
+        background-repeat: no-repeat;
+        filter: blur(0px);
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+        background: linear-gradient(rgba(7, 37, 7, 0.7), rgba(0, 0, 0, 0.8));
+
+        border-radius: 25px;
+        transition: 0.3s;
+      }
+      .swiper-slide img {
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        margin-top: 50px;
+        margin-left: 25px;
+        /* position: absolute;
+        left: 20px;
+        top: 100px; */
+      }
+      .swiper-slide-active {
+        filter: blur(0.3px);
+      }
+      .swiper-slide h1,
+      span {
+        line-height: 90%;
+      }
+      .swiper-slide h1 {
+        position: absolute;
+        left: 132.5px;
+        top: 30px;
+        margin-bottom: 5px;
+      }
+      .swiper-slide span {
+        font-size: 15px;
+        border-bottom: 1px black;
+
+        /* position: absolute;
+        left: 10px;
+        top: 75px; */
+      }
+      .swiper-pagination {
+        border-radius: 25px;
+      }
+      .slider {
+        /* width: 500px;
+        height: 500px; */
+        overflow: hidden;
+      }
+      .slides {
+        width: 500px;
+        height: 500px;
+        display: flex;
+      }
+      .slides input {
+        display: none;
+      }
+      .navigation-manual {
+        position: absolute;
+        width: 800px;
+        margin-top: -40px;
+        display: flex;
+        justify-content: center;
+      }
+      .manual-btn {
+        border: 2px solid #40d3dc;
+        padding: 5px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 1s;
+      }
+      .manual-btn:not(:last-child) {
+        margin-right: 40px;
+      }
+      .manual-btn:hover {
+        background: #40d3dc;
+      }
+      #radio2:checked ~ .one {
+        margin-left: 0;
+      }
+      #radio2:checked ~ .t {
+        margin-left: -20px;
+      }
+      #radio3:checked ~ .th {
+        margin-left: -40px;
+      }
+      #radio4:checked ~ .r {
+        margin-left: -60px;
+      }
+      #radio5:checked ~ .f {
+        margin-left: -80px;
+      }
+      #radio6:checked ~ .x {
+        margin-left: -100px;
+      }
+      #radio7:checked ~ .s {
+        margin-left: -120px;
+      }
+
+      /* .swiper-container {
+  width: 79.5%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin-left: 0;
+}
+.swiper-slide {
+  background-position: left;
+  background-size: 50px 50px;
+  width: 350px;
+  height: 350px;
+  background-repeat: no-repeat;
+  filter: blur(4px);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(rgba(7, 37, 7, 0.7), rgba(0, 0, 0, 0.8));
+
+  border-radius: 25px;
+  transition: 0.3s;
+}
+.swiper-slide img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  /* margin-top: 50px;
+  margin-left: 25px;
+  position: absolute;
+    left: 20px;
+    top: 100px; 
+}
+.swiper-slide-active {
+  filter: blur(0.3px);
+}
+.swiper-slide h1,
+span {
+  line-height: 90%;
+  font-family: "Righteous", cursive;
+}
+.swiper-slide h1 {
+  position: absolute;
+  left: 110px;
+  top: 30px;
+  margin-bottom: 5px;
+}
+.swiper-slide span {
+  font-size: 15px;
+  border-bottom: 1px black;
+
+  position: absolute;
+    left: 10px;
+    top: 75px; 
+}
+.swiper-pagination {
+  border-radius: 25px;
+} */
+    </style>
+  </head>
+  <body>
+    <div class="div cursor1">
+      <div class="swiper-container">
+        <div class="slider">
+          <div class="slides">
+            <input type="radio" name="radio-btn" id="radio1" />
+            <input type="radio" name="radio-btn" id="radio2" />
+            <input type="radio" name="radio-btn" id="radio3" />
+            <input type="radio" name="radio-btn" id="radio4" />
+            <input type="radio" name="radio-btn" id="radio5" />
+            <input type="radio" name="radio-btn" id="radio6" />
+            <input type="radio" name="radio-btn" id="radio7" />
+          </div>
+        </div>
+        <div class="navigaton-auto">
+          <div class="auto btn1"></div>
+          <div class="auto btn2"></div>
+          <div class="auto btn3"></div>
+          <div class="auto btn4"></div>
+          <div class="auto btn5"></div>
+          <div class="auto btn6"></div>
+          <div class="auto btn7"></div>
+        </div>
+        <div class="navigation-manual">
+          <label for="radio1" class="manual-btn"></label>
+          <label for="radio2" class="manual-btn"></label>
+          <label for="radio3" class="manual-btn"></label>
+          <label for="radio4" class="manual-btn"></label>
+          <label for="radio5" class="manual-btn"></label>
+          <label for="radio6" class="manual-btn"></label>
+          <label for="radio7" class="manual-btn"></label>
+        </div>
+
+        <div class="swiper-wrapper">
+          <div class="swiper-slide one">
+            <img src="jeruk.png" alt="" />
+            <h1>
+              Dasar Grafis <br />
+              <span>Multimedia</span>
+            </h1>
+            <p>Hi teman! apakah kamu suka membuat poster, mewarnainya atau membuat logo, ini tema yang wajib kamu pilih nih</p>
+            <button><a href="">Belajar!</a></button>
+          </div>
+          <div class="swiper-slide t">
+            <img src="jeruk.png" alt="" />
+            <h1>
+              Dasar Animasi <br />
+              <span>Multimedia</span>
+            </h1>
+
+            <p>Hi teman! apakah kamu suka membaca komik, atau mau membuat animasi tapi belum tau cara nya</p>
+            <button><a href="">Belajar!</a></button>
+          </div>
+          <div class="swiper-slide th">
+            <img src="jeruk.png" alt="" />
+            <h1>
+              Dasar Broadcasting <br />
+              <span>Multimedia</span>
+            </h1>
+          </div>
+
+          <div class="swiper-slide r">
+            <img src="jeruk.png" alt="" />
+            <h1>
+              Dasar Multimedia dan Internet <br />
+              <span>Multimedia</span>
+            </h1>
+            <p>Hi teman! apakah kamu suka membuat poster, mewarnainya atau membuat logo, ini tema yang wajib kamu pilih nih</p>
+            <button><a href="">Belajar!</a></button>
+          </div>
+          <div class="swiper-slide f">
+            <img src="jeruk.png" alt="" />
+            <h1>
+              Sistem Komputer dan Jaringan <br />
+              <span>Rekayasa Perangkat Lunak</span>
+            </h1>
+            <p>Hi teman! apakah kamu tertarik dengan bentuk sistem yang ada di Komputer, atau kamu kepo ni ada apa sih di jaringan itu</p>
+            <button><a href="">Belajar!</a></button>
+          </div>
+          <div class="swiper-slide x">
+            <img src="jeruk.png" alt="" />
+            <h1>
+              PPL <br />
+              <span>Rekayasa Perangkat Lunak</span>
+            </h1>
+            <p>Hi teman! apakah kamu suka membuat poster, mewarnainya atau membuat logo, ini tema yang wajib kamu pilih nih</p>
+            <button><a href="">Belajar!</a></button>
+          </div>
+          <div class="swiper-slide s">
+            <img src="jeruk.png" alt="" />
+            <h1>
+              Algoritma Pemograman <br />
+              <span>Rekayasa Perangkat Lunak</span>
+            </h1>
+            <p>Hi teman! apakah kamu suka mengurutkan sesuatu?, dan kamu suka dengan ilmu komputer, nah ini wajib dibaca nih</p>
+
+            <button><a href="">Belajar!</a></button>
+          </div>
+          <!-- <div class="swiper-slide e">
+            <img src="jeruk.png" alt="" />
+            <h1>
+              Gambar Teknik <br />
+              <span>Bisnis Konstruksi dan Properti</span>
+            </h1>
+            <p>Hi teman! apakah kamu suka dengan Pembangunan rumah, hotel, atau suka menyusun sesuatu? , nah kamu harus mempelajari gmabar teknik dulu nih</p>
+            <button><a href="">Belajar!</a></button>
+          </div>
+          <div class="swiper-slide n">
+            <img src="jeruk.png" alt="" />
+            <h1>
+              Teknik Pengukuran Tanah <br />
+              <span>Bisnis Konstruksi dan Properti</span>
+            </h1>
+            <p>Hi teman! apakah kamu suka dengan Pembangunan rumah, hotel, atau suka menyusun sesuatu? , nah kamu harus mempelajari gmabar teknik dulu nih</p>
+            <button><a href="">Belajar!</a></button>
+          </div>
+          <div class="swiper-slide t">
+            <img src="jeruk.png" alt="" />
+            <h1>
+              Mekanika Teknik <br />
+              <span>Bisnis Konstruksi dan Properti</span>
+            </h1>
+            <p>Hi teman! apakah kamu suka dengan Pembangunan rumah, hotel, atau suka menyusun sesuatu? , nah kamu harus mempelajari gmabar teknik dulu nih</p>
+            <button><a href="">Belajar!</a></button>
+          </div>
+          <div class="swiper-slide ele">
+            <img src="jeruk.png" alt="" />
+            <h1>
+              GTO <br />
+              <span>Teknik Kendaraan Dan Otomotif</span>
+            </h1>
+            <p>Hi teman! apakah kamu suka dengan Pembangunan rumah, hotel, atau suka menyusun sesuatu? , nah kamu harus mempelajari gmabar teknik dulu nih</p>
+            <button><a href="">Belajar!</a></button>
+          </div>
+
+          <div class="swiper-slide twl">
+            <img src="jeruk.png" alt="" />
+            <h1>
+              PDTO <br />
+              <span>Teknik Kendaraan Dan Otomotif</span>
+            </h1>
+            <p>Hi teman! apakah kamu suka dengan Pembangunan rumah, hotel, atau suka menyusun sesuatu? , nah kamu harus mempelajari gmabar teknik dulu nih</p>
+            <button><a href="">Belajar!</a></button>
+          </div>
+          <div class="swiper-slide ht">
+            <img src="jeruk.png" alt="" />
+            <h1>
+              TDO <br />
+              <span>Teknik Kendaraan Dan Otomotif</span>
+            </h1>
+            <p>Hi teman! apakah kamu suka membuat poster, mewarnainya atau membuat logo, ini tema yang wajib kamu pilih nih</p>
+            <button><a href="">Belajar!</a></button>
+          </div>
+          <div class="swiper-slide rt">
+            <img src="jeruk.png" alt="" />
+            <h1>
+              Boga Dasar <br />
+              <span>Tata Boga</span>
+            </h1>
+            <p>Hi teman! apakah kamu suka membuat poster, mewarnainya atau membuat logo, ini tema yang wajib kamu pilih nih</p>
+            <button><a href="">Belajar!</a></button>
+          </div>
+          <div class="swiper-slide ft">
+            <img src="jeruk.png" alt="" />
+            <h1>
+              Keamanan Pangan <br />
+              <span>Tata Boga</span>
+            </h1>
+            <p>Hi teman! apakah kamu suka membuat poster, mewarnainya atau membuat logo, ini tema yang wajib kamu pilih nih</p>
+            <button><a href="">Belajar!</a></button>
+          </div>
+          <div class="swiper-slide xt">
+            <img src="jeruk.png" alt="" />
+            <h1>
+              Ilmu Gizi <br />
+              <span>Tata Boga</span>
+            </h1>
+            <p>Hi teman! apakah kamu suka membuat poster, mewarnainya atau membuat logo, ini tema yang wajib kamu pilih nih</p>
+            <button><a href="">Belajar!</a></button>
+          </div>
+
+          <div class="swiper-slide st">
+            <img src="jeruk.png" alt="" />
+            <h1>Photografi <span>Multimedia</span></h1>
+            <p>Hi teman! apakah kamu suka membuat poster, mewarnainya atau membuat logo, ini tema yang wajib kamu pilih nih</p>
+            <button><a href="">Belajar!</a></button>
+          </div>
+          <div class="swiper-slide et">
+            <img src="jeruk.png" alt="" />
+            <h1>
+              ScriptWriter <br />
+              <span>Multimedia</span>
+            </h1>
+            <p>Hi teman! apakah kamu suka membuat poster, mewarnainya atau membuat logo, ini tema yang wajib kamu pilih nih</p>
+            <button><a href="">Belajar!</a></button>
+          </div>
+          <div class="swiper-slide nt">
+            <img src="jeruk.png" alt="" />
+            <h1>
+              Modeling <br />
+              <span>Multimedia</span>
+            </h1>
+            <p>Hi teman! apakah kamu suka membuat poster, mewarnainya atau membuat logo, ini tema yang wajib kamu pilih nih</p>
+            <button><a href="">Belajar!</a></button>
+          </div>
+          <div class="swiper-slide t">
+            <img src="jeruk.png" alt="" />
+            <h1>
+              Basis Data <br />
+              <span>Rekayasa Perangkat Lunak</span>
+            </h1>
+            <p>Hi teman! apakah kamu suka membuat poster, mewarnainya atau membuat logo, ini tema yang wajib kamu pilih nih</p>
+            <button><a href="">Belajar!</a></button>
+          </div>
+          <div class="swiper-slide to">
+            <img src="jeruk.png" alt="" />
+            <h1>
+              Desain Web <br />
+              <span>Rekayasa Perangkat Lunak</span>
+            </h1>
+            <p>Hi teman! apakah kamu suka membuat poster, mewarnainya atau membuat logo, ini tema yang wajib kamu pilih nih</p>
+            <button><a href="">Belajar!</a></button>
+          </div>
+          <div class="swiper-slide tw">
+            <img src="jeruk.png" alt="" />
+            <h1>Objek Orientasi Pemograman <span>Rekayasa Perangkat Lunak</span></h1>
+            <p>Hi teman! apakah kamu suka membuat poster, mewarnainya atau membuat logo, ini tema yang wajib kamu pilih nih</p>
+            <button><a href="">Belajar!</a></button>
+          </div>
+          <div class="swiper-slide tt">
+            <img src="jeruk.png" alt="" />
+            <h1>
+              Mobile Apps <br />
+              <span>Rekayasa Perangkat Lunak</span>
+            </h1>
+            <p>Hi teman! apakah kamu suka membuat poster, mewarnainya atau membuat logo, ini tema yang wajib kamu pilih nih</p>
+            <button><a href="">Belajar!</a></button>
+          </div>
+          <div class="swiper-slide tr">
+            <img src="jeruk.png" alt="" />
+            <h1>
+              Tata Hidang <br />
+              <span>Tata Boga</span>
+            </h1>
+            <p>Hi teman! apakah kamu suka membuat poster, mewarnainya atau membuat logo, ini tema yang wajib kamu pilih nih</p>
+            <button><a href="">Belajar!</a></button>
+          </div>
+          <div class="swiper-slide tf">
+            <img src="jeruk.png" alt="" />
+            <h1>
+              Pastry dan Bakery <br />
+              <span>Tata Boga</span>
+            </h1>
+            <p>Hi teman! apakah kamu suka membuat poster, mewarnainya atau membuat logo, ini tema yang wajib kamu pilih nih</p>
+            <button><a href="">Belajar!</a></button>
+          </div>
+          <div class="swiper-slide tx">
+            <img src="jeruk.png" alt="" />
+            <h1>
+              Keparawisataan <br />
+              <span>Tata Boga</span>
+            </h1>
+            <p>Hi teman! apakah kamu suka membuat poster, mewarnainya atau membuat logo, ini tema yang wajib kamu pilih nih</p>
+            <button><a href="">Belajar!</a></button>
+          </div>
+          <div class="swiper-slide ts">
+            <img src="jeruk.png" alt="" />
+            <h1>
+              Gambar Bangunan <br />
+              <span>Bisnis Konstruksi dan Properti</span>
+            </h1>
+            <p>Hi teman! apakah kamu suka membuat poster, mewarnainya atau membuat logo, ini tema yang wajib kamu pilih nih</p>
+            <button><a href="">Belajar!</a></button>
+          </div>
+          <div class="swiper-slide te">
+            <img src="jeruk.png" alt="" />
+            <h1>
+              Engine <br />
+              <span>Teknik Kendaraan Ringan Otomotif</span>
+            </h1>
+            <p>Hi teman! apakah kamu suka membuat poster, mewarnainya atau membuat logo, ini tema yang wajib kamu pilih nih</p>
+            <button><a href="">Belajar!</a></button>
+          </div>
+          <div class="swiper-slide tn">
+            <img src="jeruk.png" alt="" />
+            <h1>
+              Kelistrikan <br />
+              <span>Teknik Kendaraan Ringan Otomotif</span>
+            </h1>
+            <p>Hi teman! apakah kamu suka membuat poster, mewarnainya atau membuat logo, ini tema yang wajib kamu pilih nih</p>
+            <button><a href="">Belajar!</a></button>
+          </div> -->
+        </div>
+
+        <div class="swiper-pagination"></div>
+      </div>
+      <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+      <script>
+        var swiper = new Swiper(".swiper-container", {
+          pagination: ".swiper-pagination",
+          effect: "coverflow",
+          grabCursor: true,
+          centeredSlides: true,
+          slidesPerView: "auto",
+          coverflow: {
+            rotate: 100,
+            stretch: 0,
+            depth: 100,
+            modifier: 5,
+            slideShadows: true,
+          },
+          loop: true,
+        });
+      </script>
+    </div>
+  </body>
+</html>

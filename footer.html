@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+        *{
+            margin:0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+         max-width: 1170px;
+         margin: auto;
+         line-height: 1.5;
+        }
+        .roo{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        ul{
+            list-style: none;
+        }
+        .footer{
+            background-color: #f5d310;
+            padding: 15px 0;
+        }
+        .footer-col{
+            width: 25%;
+            padding: 0  15px;
+        }
+        .footer-col h4{
+            font-size: 18px;
+            color: white;
+            text-transform: capilatize;
+            margin-bottom: 30px;
+            font-weight: 500;
+            font-family: 'Poppins', sans-serif;
+            position: relative;
+        }
+        .footer-col h4::before{
+            content: '';
+            background-color: red;
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            height: 2px;
+            box-sizing: border-box;
+            width: 50px;
+        }
+        .footer-col ul li:not(:last-child){
+            margin-bottom:10px;
+        }
+        .footer-col ul li a{
+            font-size: 16px;
+            text-transform: capitalize;
+        }
+    </style>
+   <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <footer class="footer">
+        <div class="container">
+            <div class="roo">
+                <div class="footer-col">
+                    <h4>Kontak Kami</h4>
+                    <div class="social-links">
+                        <a href=""><i class="fas fa-map-marker-alt"></i></a>
+                        <a href=""><i class="fab fa-youtube"></i></a>
+                        <a href=""><i class="fab fa-facebook-f"></i></a>
+                        <a href=""><i class="fab fa-instagram"></i></a>
+                        <a href=""><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Get Help</h4>
+                    <ul>
+                        <li><a href="">FAQ</a></li>
+                        <li><a href="">Our Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Beri Kami Saran</h4>
+                    <p>Masukan :</p>
+                    <textarea cols="30" rows="5" name=advice></textarea><br>
+                <button name="komentar"><a href="">Kirim</a></button>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
